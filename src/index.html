@@ -16,7 +16,7 @@
     <!-- Так добавляются фрагменты в главные HTML-файлы страниц. -->
 
     <include src="./partials/example.html"></include>
-    <form>
+    <form class="search-form">
       <div>
         <label for="searchQuery" class="sr-only" Що шукаємо?></label>
         <input type="text" placeholder="Що шукати?" id="name-input" />
@@ -26,7 +26,8 @@
     </form>
 
     <ul class="articles"></ul>
-    <button type="button" class="btn-primary" data-action="load-more">Загружаем</button>
+    <button type="button" class="btn-primary" data-action="load-more">Показать еще</button>
+
     <!-- Скрипт идёт последним в разметке. В нём уже подключен главный SASS-файл. -->
     <script src="./index.js"></script>
     <script src="./apiService.js"></script>
