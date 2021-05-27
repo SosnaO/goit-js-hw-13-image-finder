@@ -7,7 +7,7 @@
 // };
 // const url ='https://pixabay.com/api/?image_type=photo&orientation=horizontal&q=cat&page=1&per_page=12
 
-fetch('https://pixabay.com/api/?image_type=photo&orientation=horizontal&q=cat&page=1&per_page=12&key=21803950-62f4c86011510fd15fe85c0d2')
- //fetch(url,options)
-.then(response => response.json())
-  .then(console.log())
+// fetch(`https://pixabay.com/api/?image_type=photo&orientation=horizontal&q=${search}&page=1&per_page=12&key=21803950-62f4c86011510fd15fe85c0d2`)
+//  //fetch(url,options)
+// .then(response => response.json())
+//   .then(console.log())
