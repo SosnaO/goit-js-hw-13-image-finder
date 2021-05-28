@@ -22,6 +22,7 @@ refs.loadMoreBtn.addEventListener('click', onLoadMore);
 //let searchName = '';
 function onSearch(event) {
   event.preventDefault();
+  clearArticlesContainer();
   newApiService.query = event.currentTarget.elements.query.value;
   newApiService.resetPage();
   newApiService.fetchArticles().then(appendArticlesMarkup);
@@ -37,3 +38,8 @@ function onLoadMore(event){
 function appendArticlesMarkup(articles) {
   refs.gallery.insertAdjacentHTML('beforeend', articlesTpl(articles))
 }
+
+function clearArticlesContainer() {
+  refs.gallery.innerHTML = '';
+}
+
