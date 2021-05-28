@@ -1,14 +1,16 @@
 import './sass/main.scss';
-import NewsApiService from './apiService.js'
+
+import articlesTpl from './articles.hbs';
+import NewsApiService from './apiService.js';
 
 const refs = {
   searchForm: document.querySelector('.search-form'),
-  container: document.querySelector('.articles'),
+  gallery: document.querySelector('.gallery'),
   loadMoreBtn:document.querySelector('.btn-primary'),
 
 };
   console.log(refs.searchForm)
-console.log(refs.container)
+console.log(refs.gallery)
 
 console.log(refs.loadMoreBtn)
 
@@ -20,11 +22,18 @@ refs.loadMoreBtn.addEventListener('click', onLoadMore);
 //let searchName = '';
 function onSearch(event) {
   event.preventDefault();
- newApiService.query = event.currentTarget.elements.query.value;
-  newApiService.fetchArticles();
+  newApiService.query = event.currentTarget.elements.query.value;
+  newApiService.resetPage();
+  newApiService.fetchArticles().then(appendArticlesMarkup);
 
 };
 
 function onLoadMore(event){
-  newApiService.fetchArticles();
+  newApiService.fetchArticles().then(appendArticlesMarkup);
+}
+
+
+
+function appendArticlesMarkup(articles) {
+  refs.gallery.insertAdjacentHTML('beforeend', articlesTpl(articles))
 }
