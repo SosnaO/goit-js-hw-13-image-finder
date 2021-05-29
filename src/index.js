@@ -1,5 +1,5 @@
 import './sass/main.scss';
-
+import './style.css';
 import articlesTpl from './articles.hbs';
 import NewsApiService from './apiService.js';
 
@@ -19,7 +19,6 @@ const newApiService = new NewsApiService();
 
 refs.searchForm.addEventListener('submit', onSearch);
 refs.loadMoreBtn.addEventListener('click', onLoadMore);
-//let searchName = '';
 function onSearch(event) {
   event.preventDefault();
   clearArticlesContainer();
@@ -36,8 +35,12 @@ function onLoadMore(event){
 
 
 function appendArticlesMarkup(articles) {
-  refs.gallery.insertAdjacentHTML('beforeend', articlesTpl(articles))
-}
+  refs.gallery.insertAdjacentHTML('beforeend', articlesTpl(articles));
+   refs.gallery.scrollIntoView({
+    behavior: 'smooth',
+    block: 'end',
+  });
+  };
 
 function clearArticlesContainer() {
   refs.gallery.innerHTML = '';
