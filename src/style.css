@@ -1,5 +1,10 @@
 body {
   text-align: center;
+
+  font-family: K2D, sans-serif;
+
+  background: #d1aeca;
+  font-size: 15px;
 }
 .gallery {
   display: flex;
@@ -30,4 +35,64 @@ body {
   width: 300px;
   height: 180px;
   object-fit: cover;
+}
+
+.button {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.button.is-hidden {
+  display: none;
+}
+.spinner-border-sm {
+  width: 1rem;
+  height: 1rem;
+  border-width: 2em;
+}
+.spinner-border {
+  display: inline-block;
+  vertical-align: text-bottom;
+  border: 0.25em solid currentColor;
+  background-color: transparent;
+  border-radius: 50%;
+  animation: spinner-border 0.75s Linear infinite;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: blue;
+  border-color: blue;
+  border-radius: 5px;
+  width: 150px;
+  height: 50px;
+  font-size: 20px;
+}
+.btn {
+  color: #fff;
+  background-color: blue;
+  border-color: blue;
+  border-radius: 5px;
+  width: 150px;
+  height: 50px;
+  font-size: 20px;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+.search-input {
+  width: 400px;
+  font-family: inherit;
+  font-size: 20px;
+  padding: 10px;
+  margin-top: 10px;
+
+  border: 3px solid #403b4a;
+  border-radius: 5px;
+}
+
+.search-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }

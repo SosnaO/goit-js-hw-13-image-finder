@@ -10,7 +10,10 @@ export default class NewsApiService {
         .then(data => {
           this.incrementPage();
           return data.hits;
+
+
         });
+
   }
 
   incrementPage() {
@@ -22,6 +25,7 @@ export default class NewsApiService {
 
   get query() {
     return this.searchName;
+
   }
   set query(newQuery) {
     this.searchName = newQuery;
@@ -29,3 +33,6 @@ export default class NewsApiService {
 
 }
 
+// function show() {
+//   refs.loadMoreBtn.classList.remove('is-hidden')
+//  }
