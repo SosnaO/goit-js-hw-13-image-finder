@@ -13,7 +13,7 @@ const refs = {
 
 };
 const newApiService = new NewsApiService();
-hide();
+//hide();
 refs.searchForm.addEventListener('submit', onSearch);
 refs.loadMoreBtn.addEventListener('click', onLoadMore);
 
@@ -21,13 +21,23 @@ refs.loadMoreBtn.addEventListener('click', onLoadMore);
 function onSearch(event) {
   event.preventDefault();
   newApiService.query = event.currentTarget.elements.query.value;
-  if (newApiService.query === '' || newApiService.query=== ' ') {
+  if (newApiService.query === '' || newApiService.query === ' ') {
+    clearArticlesContainer();
+    //hide();
     return error({
       text: `The search is empty`,
       delay: 2000
-
     });
   };
+
+//   if (newApiService.query === '"total":0" {
+//     clearArticlesContainer();
+//   hide();
+//   return error({
+//     text: `The search is empty`,
+//     delay: 2000
+//   });
+// }
   newApiService.resetPage();
   newApiService.fetchArticles().then(articles => {
     clearArticlesContainer();
@@ -49,6 +59,7 @@ function appendArticlesMarkup(articles) {
 
 function clearArticlesContainer() {
   refs.gallery.innerHTML = '';
+  hide();
 }
 
 function show() {
