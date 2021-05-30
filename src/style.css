@@ -67,6 +67,8 @@ body {
   width: 150px;
   height: 50px;
   font-size: 20px;
+  margin-bottom: 20px;
+  margin-top: 10px;
 }
 .btn {
   color: #fff;
@@ -85,7 +87,6 @@ body {
   font-size: 20px;
   padding: 10px;
   margin-top: 10px;
-
   border: 3px solid #403b4a;
   border-radius: 5px;
 }
