@@ -9,35 +9,26 @@ import {error } from '@pnotify/core';
 const refs = {
   searchForm: document.querySelector('.search-form'),
   gallery: document.querySelector('.gallery'),
-  loadMoreBtn:document.querySelector('.btn-primary'),
+  loadMoreBtn: document.querySelector('.btn-primary'),
+  fotoCard:document.querySelector('.foto-card'),
 
 };
 const newApiService = new NewsApiService();
-//hide();
 refs.searchForm.addEventListener('submit', onSearch);
 refs.loadMoreBtn.addEventListener('click', onLoadMore);
-
+hide()
 
 function onSearch(event) {
   event.preventDefault();
   newApiService.query = event.currentTarget.elements.query.value;
   if (newApiService.query === '' || newApiService.query === ' ') {
     clearArticlesContainer();
-    //hide();
-    return error({
+        return error({
       text: `The search is empty`,
       delay: 2000
-    });
-  };
+        });
 
-//   if (newApiService.query === '"total":0" {
-//     clearArticlesContainer();
-//   hide();
-//   return error({
-//     text: `The search is empty`,
-//     delay: 2000
-//   });
-// }
+  };
   newApiService.resetPage();
   newApiService.fetchArticles().then(articles => {
     clearArticlesContainer();

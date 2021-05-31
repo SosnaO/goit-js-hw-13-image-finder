@@ -45,19 +45,6 @@ body {
 .button.is-hidden {
   display: none;
 }
-.spinner-border-sm {
-  width: 1rem;
-  height: 1rem;
-  border-width: 2em;
-}
-.spinner-border {
-  display: inline-block;
-  vertical-align: text-bottom;
-  border: 0.25em solid currentColor;
-  background-color: transparent;
-  border-radius: 50%;
-  animation: spinner-border 0.75s Linear infinite;
-}
 
 .btn-primary {
   color: #fff;
