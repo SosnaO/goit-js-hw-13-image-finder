@@ -4,7 +4,8 @@ import articlesTpl from './articles.hbs';
 import NewsApiService from './apiService.js';
 import '@pnotify/core/dist/BrightTheme.css';
 import "@pnotify/core/dist/PNotify.css";
-import {error } from '@pnotify/core';
+import { error } from '@pnotify/core';
+
 
 const refs = {
   searchForm: document.querySelector('.search-form'),
